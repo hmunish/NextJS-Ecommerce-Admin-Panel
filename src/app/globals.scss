@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -29,5 +29,19 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+} */
+
+@mixin box-model() {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  @include box-model;
+  &::after,
+  &::before {
+    @include box-model;
   }
 }
